@@ -1,0 +1,36 @@
+<main class="vigenere__wrapper" id="vigenere">
+   
+   <h1 class="vigenere__title">
+      Vigenere Encryption
+   </h1>
+   
+   <div class="vigenere__modes">
+      <div class="vigenere__radio">
+         <input type="radio" id="encrypt" value="true" v-model="is_encrypting">
+         <label for="encrypt">Encrypt</label>
+      </div>
+
+      <div class="vigenere__radio">
+         <input type="radio" id="decrypt" value="false" v-model="is_encrypting">
+         <label for="decrypt">Decrypt</label>
+      </div>
+   </div>
+   
+   <textarea class="vigenere__input" rows="5" v-model="message"></textarea>
+   
+   <div class="vigenere__key">
+      Secret key: <input type="text" v-model="key">
+   </div>
+   
+   <div class="vigenere__message">
+      <h3 class="vigenere__message-banner">
+         Your 
+         <span v-if=current_mode>Encrypted</span>
+         <span v-else>Decrypted</span> Message
+      </h3>
+      
+      <p>
+         {{encrypted_message}}
+      </p>
+   </div>
+</main>
